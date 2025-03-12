@@ -81,4 +81,4 @@ BEGIN {
             seen[sorted_line] = 1  # Mark the string as printed
         }
     }
-}' data.csv >data2.csv
+}' $1 >$2
