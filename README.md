@@ -7,3 +7,5 @@ global_alleles.py – generates a minimal list of alleles covering 98% of HLA ha
 Omicron_peptides.csv – a list of peptides associated with Omicron from the article https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6
 
 separate_length.sh - script for sorting peptides by length
+
+run_netMHCpan.sh - a script for predicting peptide binding to HLA class I.
