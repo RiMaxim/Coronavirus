@@ -4,6 +4,6 @@ processing.sh – filters the raw file with HLA haplotypes downloaded from Allel
 
 global_alleles.py – generates a minimal list of alleles covering 98% of HLA haplotypes.
 
-821_peptides.csv – a list of peptides from the article https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6
+Omicron_peptides.csv – a list of peptides associated with Omicron from the article https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6
 
 separate_length.sh - script for sorting peptides by length
