@@ -8,7 +8,7 @@ grep "PEPLIST" tmp2 |grep -v "Protein" |sed 's/ /|/g'|sed 's/|||||||||/\t/g'| se
 awk -F'\t' '{if($3 <= '$1') print $1"\t"$2}' >tmp3
 
 cut -f 1 tmp3 >tmp4
-cut -f 2 tmp3 |awk -F'\tHLA-' '{print $2}' | sort |uniq >tmp5
+cut -f 2 tmp3 |awk -F'HLA-' '{print $2}' | sort |uniq >tmp5
 
 paste tmp4 tmp5 >data5.csv
 
