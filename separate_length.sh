@@ -4,7 +4,7 @@ cat $1 |awk -F',' '{if($6 == "Wuhan-Hu-1") print $1}' >>wt.list
 cat $1 |awk -F',' '{if($6 == "Wuhan-Hu-1 and Omicron B.1.1.529") print $1}' >>omicron.list
 cat $1 |awk -F',' '{if($6 == "Omicron B.1.1.529") print $1}' >>omicron.list
 
-cat $2 |awk -F'\t' '{if(length($1) > '7' && length($1) < '17') print $1}' >tmp1
+cat $2.list |awk -F'\t' '{if(length($1) > '7' && length($1) < '17') print $1}' >tmp1
 cat tmp1 |awk -F'\t' '{if(length($1) == '8') print $1}' >8.length
 cat tmp1 |awk -F'\t' '{if(length($1) == '9') print $1}' >9.length
 awk '{print substr($1,2); }' 9.length >8_9.length
