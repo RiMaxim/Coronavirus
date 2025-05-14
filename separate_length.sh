@@ -9,7 +9,7 @@ cat $2.list |awk -F'\t' '{if(length($1) > '7' && length($1) < '17') print $1}' >
 cat tmp1 |awk -F'\t' '{if(length($1) == '8') print $1"\t"$1}' >8.length
 
 cat tmp1 |awk -F'\t' '{if(length($1) == '9') print $1}' >tmp2
-cat tmp2 |awk -F'\t' '{print $1"\t"$2}' >9.length
+cat tmp2 |awk -F'\t' '{print $1"\t"$1}' >9.length
 awk '{print substr($1,2); }' tmp2 >tmp3
 paste tmp3 tmp2 >8_9.length
 
