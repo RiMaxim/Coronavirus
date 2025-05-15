@@ -2,7 +2,7 @@ cut -f 1 table.txt > ids.txt
 
 while read -r id; do
     wget -q -O - "http://www.allelefrequencies.net/tools/getrawdata.asp?pop_id=${id}" > ${id}
-    ./processing.sh ${id} tmp1
+    ./processing_HLA.sh ${id} tmp1
     grep "${id}" table.txt |awk -F'\t' '{print $4}' > tmp2
     tmp3=$(cat tmp2)
     cat tmp1 | awk -F'\t' -v tmp3="$tmp3" '{print $1"\t"tmp3}' >>tmp4
