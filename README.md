@@ -65,7 +65,13 @@
 
 
 
-# 3. Input Files
+# 3. NetMHCpan-4.1 Configuration Note
+
+After installation, edit line 14 of the netMHCpan executable to point to your installation directory.
+
+
+
+# 4. Input Files
 
 **table.txt** – List of HLA genotype IDs (from Allele Frequencies Database).
 
@@ -77,25 +83,41 @@
 
 
 
-# 4. Pipeline Workflow
-A computational pipeline for analyzing peptide binding affinity to HLA class I alleles and estimating population immunity.
+# 5. Pipeline Workflow
+A computational pipeline for analyzing peptide binding affinity to HLA class I alleles and estimating population immunity. See the full description in the article in section 19-30.
 
-Step 1: Download HLA Haplotypes from the Allele Frequencies database (http://www.allelefrequencies.net/BrowseGenotype.aspx) into a single file. A file containing IDs (corresponding to the first column in the website’s table - table.txt) is required for download.
+**Step 1:** Download HLA Haplotypes from the Allele Frequencies database (http://www.allelefrequencies.net/BrowseGenotype.aspx) into a single file. A file containing IDs (corresponding to the first column in the website’s table - table.txt) is required for download. Output file is data.csv
 
 >./download.sh
 
+**Step 2:** Filter the raw peptides from input.csv. Output file is peptide.csv
+
+>./processing_peptideA.sh
+
+**Step 3:** Filter the raw HLA haplotype data downloaded from the Allele Frequencies database.
+
+>./processing_HLA.sh data.csv data2.csv
+
+**Step 4:** Select Global HLA Alleles (98% Coverage).
+
+>python3 ./global_alleles.py data2.csv data3.csv
+
+**Step 5:** Sort Peptides by Length. This example demonstrates the process of analysis run on peptides derived from the Omicron B.1.1.529 RBD antigen. Output files are 8.length, 8_9.length, 8_10.length, 9.length, 9_10.length and 10.length
+
+>./separate_length.sh peptide.csv omicron
+
+**Step 6:** Organize the list of alleles to match the algorithm’s required format.
+>awk -F'*' '{print "HLA-"$1$2}' data3.csv >data4.csv
+
+**Step 7:** Predict HLA Binding (NetMHCpan-4.1). As an argument, you will obtain a numerical value representing the binding rank threshold. Peptide-HLA class I pairs with a binding rank above this threshold are removed. By default, the binding rank threshold for strongly binding peptides is 0.5. The program returns a list of HLA class I alleles and the corresponding peptides that exhibit strong binding, with a rank below 0.5. Output file is data5.csv 
+
+>./run_netMHCpan.sh 0.5
+
+**Step 8:** Calculate Population Immunity across different countries. The resulting table (data6.csv) with a list of 27 countries is sorted from the highest to the lowest index value (column 2). The number of countries may vary, depending on the file table.txt from the step 17. The resulting table (data7.csv) contains three columns: country, index value, and peptide.
+
+>./population_immunity.sh
 
 
+# 6. Check Protection Index Against RBD Omicron with Telegram Bot in a second
 
-
-processing_peptideA.sh – filters the raw peptide data from input.csv.
-
-processing_HLA.sh – filters the raw HLA haplotype data downloaded from the Allele Frequencies database.
-
-global_alleles.py – generates a minimal set of HLA alleles covering 98% of the global HLA haplotype diversity.
-
-separate_length.sh – sorts peptides based on their length.
-
-run_netMHCpan.sh – predicts peptide binding affinity to HLA class I molecules using NetMHCpan 4.1.
-
-population_immunity.sh – calculates the protection index across different countries.
+Do you know that now you can check immune defense against the RBD Omicron variant using a simple Telegram bot? Meet @Protection_index_bot – a handy tool that calculates protection index based on HLA class I haplotype in a second!
