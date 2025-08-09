@@ -17,6 +17,7 @@ Dependencies:
 >gawk (GNU Awk, used in processing scripts)  
 
 
+
 **2. Input Files**
 
 table.txt – List of HLA genotype IDs (from Allele Frequencies Database).
@@ -26,6 +27,7 @@ input.csv – a list of peptides associated with Omicron B.1.1.529 and Wuhan-Hu-
 wt – Wuhan-Hu-1 RBD sequence, including a C-terminal AviTag-His tag (ASENLYFQGGTGLNDIFEAQKIEWHETGHHHHHH) and an N-terminal non-RBD leader sequence (AP).
 
 omicron – Omicron B.1.1.529 RBD sequence (same tag format).
+
 
 
 **3. Pipeline Workflow**
