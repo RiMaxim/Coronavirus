@@ -8,9 +8,9 @@
 >
 >download file https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz (required for NetMHCpan)
 >
->install tcsh (required for NetMHCpan). Run the script install_tcsh_gawk.sh The script checks for sudo privileges. If no privileges are available, it installs tcsh and gawk locally in $HOME/.local It adds the path to $PATH via ~/.bashrc (if not already present).
+>install tcsh (required for NetMHCpan). Run the script  [![install_tcsh_gawk.sh](https://img.shields.io/badge/install_tcsh_gawk.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/install_tcsh_gawk.sh) The script checks for sudo privileges. If no privileges are available, it installs tcsh and gawk locally in $HOME/.local It adds the path to $PATH via ~/.bashrc (if not already present).
 >
->install gawk (GNU Awk, used in processing scripts). Run the script install_tcsh_gawk.sh The script checks for sudo privileges. If no privileges are available, it installs tcsh and gawk locally in $HOME/.local. It adds the path to $PATH via ~/.bashrc (if not already present).
+>install gawk (GNU Awk, used in processing scripts). Run the script  [![install_tcsh_gawk.sh](https://img.shields.io/badge/install_tcsh_gawk.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/install_tcsh_gawk.sh) The script checks for sudo privileges. If no privileges are available, it installs tcsh and gawk locally in $HOME/.local. It adds the path to $PATH via ~/.bashrc (if not already present).
 
 
 
