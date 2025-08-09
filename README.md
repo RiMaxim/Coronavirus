@@ -1,6 +1,4 @@
-**1. Installation**
-
-Dependencies:
+**1. Dependencies**
 
 >Linux (tested on Ubuntu 24.04.2 LTS)
 >
@@ -10,23 +8,28 @@ Dependencies:
 >
 >install tcsh (required for NetMHCpan)
 >
->Download file https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz (required for NetMHCpan)
+>download file https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz (required for NetMHCpan)
 >
 >install gawk (GNU Awk, used in processing scripts)  
 
 
 **2. Download and Install**
 
-># Download the archive (replace URL with the one sent to your email)
+# Download the archive (replace URL only for netMHCpan-4.1b.Linux.tar.gz with the one sent to your email)
 >
->wget https://services.healthtech.dtu.dk/download/12345678-1234-1234-1234-123456789abc/netMHCpan-4.1b.Linux.tar.gz
+>wget https://services.healthtech.dtu.dk/download/35b3498a-39ab-44df-b680-d8b6d5d0c43b/netMHCpan-4.1b.Linux.tar.gz
 >
-># Extract and install
-tar -xvzf netMHCpan-4.1b.Linux.tar.gz
-cd netMHCpan-4.1b
-./configure
-make
-sudo make install
+>wget https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz
+
+# Extract
+>tar -xvzf netMHCpan-4.1b.Linux.tar.gz
+>
+>tar -xvzf data.tar.gz
+
+
+# Install
+
+
 
 # Verify installation
 netMHCpan -h  # Should display help menu
