@@ -30,7 +30,7 @@
 >which tcsh || echo "tcsh is not installed"
 
 **Install tcsh (with root privileges)**
->sudo apt-get install tcsh
+>sudo apt install tcsh
 
 **Local installation (without root access)**
 >wget ftp://ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz
@@ -45,30 +45,39 @@
 >
 >export PATH=$HOME/.local/bin:$PATH
 
+**Check if gawk is installed**
+>gawk --version  # Should show GNU Awk 5.0+
+
+**Install gawk (with root privileges)**
+>sudo apt install gawk
+>
+>wget https://ftp.gnu.org/gnu/gawk/gawk-5.3.2.tar.gz
+>
+>tar xvzf gawk-5.3.2.tar.gz
+>
+>cd gawk-5.3.2/  # Version may vary
+>
+>./configure --prefix=$HOME/.local
+>
+>make && make install
+>
+>export PATH=$HOME/.local/bin:$PATH
 
 
 
+# 3. Input Files
+
+**table.txt** – List of HLA genotype IDs (from Allele Frequencies Database).
+
+**input.csv** – a list of peptides associated with Omicron B.1.1.529 and Wuhan-Hu-1, derived from the article: https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6. Each peptide is accompanied by an intensity value.
+
+**wt** – Wuhan-Hu-1 RBD sequence, including a C-terminal AviTag-His tag (ASENLYFQGGTGLNDIFEAQKIEWHETGHHHHHH) and an N-terminal non-RBD leader sequence (AP).
+
+**omicron** – Omicron B.1.1.529 RBD sequence (same tag format).
 
 
 
-
-
-
-
-
-**2. Input Files**
-
-table.txt – List of HLA genotype IDs (from Allele Frequencies Database).
-
-input.csv – a list of peptides associated with Omicron B.1.1.529 and Wuhan-Hu-1, derived from the article: https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6. Each peptide is accompanied by an intensity value.
-
-wt – Wuhan-Hu-1 RBD sequence, including a C-terminal AviTag-His tag (ASENLYFQGGTGLNDIFEAQKIEWHETGHHHHHH) and an N-terminal non-RBD leader sequence (AP).
-
-omicron – Omicron B.1.1.529 RBD sequence (same tag format).
-
-
-
-**3. Pipeline Workflow**
+# 4. Pipeline Workflow
 A computational pipeline for analyzing peptide binding affinity to HLA class I alleles and estimating population immunity.
 
 Step 1: Download HLA Haplotypes from the Allele Frequencies database (http://www.allelefrequencies.net/BrowseGenotype.aspx) into a single file. A file containing IDs (corresponding to the first column in the website’s table - table.txt) is required for download.
