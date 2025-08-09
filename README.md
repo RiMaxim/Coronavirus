@@ -1,7 +1,16 @@
-# 1. Quick start
+# 1. Quick start by Linux (tested on Ubuntu 24.04.2 LTS)
 
->git clone 
+>git clone https://github.com/RiMaxim/Coronavirus.git
 >
+>cd Coronavirus
+>
+>chmod +x *sh *py
+>
+>./[![install_tcsh_gawk.sh](https://img.shields.io/badge/install_tcsh_gawk.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/install_tcsh_gawk.sh) 
+>
+>./[![run_full_pipeline.sh](https://img.shields.io/badge/run_full_pipeline.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/run_full_pipeline.sh) 
+
+
 # 1. Dependencies
 
 >Linux (tested on Ubuntu 24.04.2 LTS)
