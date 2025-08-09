@@ -17,7 +17,6 @@
 # 2. Download and Install
 
 **Download the archive (replace URL only for netMHCpan-4.1b.Linux.tar.gz with the one sent to your email)**
->
 >wget https://services.healthtech.dtu.dk/download/35b3498a-39ab-44df-b680-d8b6d5d0c43b/netMHCpan-4.1b.Linux.tar.gz
 >
 >wget https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz
@@ -27,32 +26,24 @@
 >
 >tar -xvzf data.tar.gz
 
-**Install**
+**Check if tcsh is installed**
+>which tcsh || echo "tcsh is not installed"
+
+**Install tcsh (with root privileges)**
+>sudo apt-get install tcsh
+
+**Local installation (without root access)**
+>wget ftp://ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz
 >
-
-
-# Verify installation
-netMHCpan -h  # Should display help menu
-
-tar xvf netMHCpan-4.1b.Linux.tar
-cd netMHCpan-4.1
-wget https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz
-tar xvf data.tar.gz
-sudo apt install tcsh
-
-# Check if tcsh is installed
-which tcsh || echo "tcsh is not installed"
-
-# Install tcsh (with root privileges)
-sudo apt-get install tcsh
-
-# Local installation (without root access)
-wget ftp://ftp.astron.com/pub/tcsh/tcsh-6.24.07.tar.gz
-tar xvzf tcsh-6.24.07.tar.gz
-cd tcsh-6.24.07
-./configure --prefix=$HOME/.local
-make && make install
-export PATH=$HOME/.local/bin:$PATH
+>tar xvzf tcsh-6.24.07.tar.gz
+>
+>cd tcsh-6.24.07
+>
+>./configure --prefix=$HOME/.local
+>
+>make && make install
+>
+>export PATH=$HOME/.local/bin:$PATH
 
 
 
