@@ -6,9 +6,9 @@
 >
 >NetMHCpan 4.1 (License Required: NetMHCpan is free for academic use but requires registration). Go to the official NetMHCpan 4.1 page ([https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/](https://services.healthtech.dtu.dk/cgi-bin/sw_request?software=netMHCpan&version=4.1&packageversion=4.1b&platform=Linux)). Fill out the form with academic email (e.g., @university.edu) and institutional details. Check your email for the download link (subject: NetMHCpan download instructions).
 >
->install tcsh (required for NetMHCpan)
->
 >download file https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz (required for NetMHCpan)
+>
+>install tcsh (required for NetMHCpan)
 >
 >install gawk (GNU Awk, used in processing scripts)  
 
@@ -28,7 +28,7 @@
 >tar -xvzf data.tar.gz
 
 **Install**
-
+>
 
 
 # Verify installation
