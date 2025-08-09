@@ -1,5 +1,5 @@
 awk -F',' '
-NR == 0 { next }  # пропустить заголовок, если он есть
+NR == 0 { next }  # skip the header if it exists
 {
     key = $1 FS $2 FS $3
     sum[key] += $4
@@ -27,7 +27,7 @@ BEGIN {
     condition = ($3 == "HeLa i20S") ? "HeLa c20S" : $3
 
     if (condition == "control") {
-        # Общая группа "Total value for the control group" — суммируем по всем вариантам
+        # General group "Total value for the control group" — sum across all variants
         group = "Total value for the control group"
         sum[peptide][group] += $4
     } else {
@@ -41,14 +41,14 @@ BEGIN {
 }
 
 END {
-    # Заголовок
+    # Header
     printf "%s", "Peptide"
     for (g in groups) header[g] = g
     n = asort(header, sorted_groups)
     for (i = 1; i <= n; i++) printf "\t%s", sorted_groups[i]
     print ""
 
-    # Значения
+    # Values
     for (p in peptides) {
         printf "%s", p
         for (i = 1; i <= n; i++) {
