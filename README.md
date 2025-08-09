@@ -8,7 +8,9 @@
 >
 >./[![install_tcsh_gawk.sh](https://img.shields.io/badge/install_tcsh_gawk.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/install_tcsh_gawk.sh) 
 >
->./[![run_full_pipeline.sh](https://img.shields.io/badge/run_full_pipeline.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/run_full_pipeline.sh) 
+> Go to the official NetMHCpan 4.1 page ([https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/](https://services.healthtech.dtu.dk/cgi-bin/sw_request?software=netMHCpan&version=4.1&packageversion=4.1b&platform=Linux)). Fill out the form with academic email (e.g., @university.edu) and institutional details. Check your email for the copy link
+>
+>./[![run_full_pipeline.sh](https://img.shields.io/badge/run_full_pipeline.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/run_full_pipeline.sh) In the second line, replace the link from previos step.
 
 
 # 1. Dependencies
