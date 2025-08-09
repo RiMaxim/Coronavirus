@@ -1,4 +1,4 @@
-**1. Dependencies**
+# 1. Dependencies
 
 >Linux (tested on Ubuntu 24.04.2 LTS)
 >
@@ -13,21 +13,21 @@
 >install gawk (GNU Awk, used in processing scripts)  
 
 
-**2. Download and Install**
 
-# Download the archive (replace URL only for netMHCpan-4.1b.Linux.tar.gz with the one sent to your email)
+# 2. Download and Install
+
+**Download the archive (replace URL only for netMHCpan-4.1b.Linux.tar.gz with the one sent to your email)**
 >
 >wget https://services.healthtech.dtu.dk/download/35b3498a-39ab-44df-b680-d8b6d5d0c43b/netMHCpan-4.1b.Linux.tar.gz
 >
 >wget https://services.healthtech.dtu.dk/services/NetMHCpan-4.1/data.tar.gz
 
-# Extract
+**Extract**
 >tar -xvzf netMHCpan-4.1b.Linux.tar.gz
 >
 >tar -xvzf data.tar.gz
 
-
-# Install
+**Install**
 
 
 
