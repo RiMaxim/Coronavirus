@@ -7,13 +7,13 @@ A computational pipeline for analyzing peptide binding affinity to HLA class I a
 Dependencies:
 
 >Linux (tested on Ubuntu 24.04.2 LTS)
-
+>
 >Python 3.12.2
-
+>
 >NetMHCpan 4.1 (License Required: NetMHCpan is free for academic use but requires registration)
-
+>
 >tcsh (required for NetMHCpan)
-
+>
 >gawk (GNU Awk, used in processing scripts)  
 
 
