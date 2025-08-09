@@ -88,34 +88,34 @@ A computational pipeline for analyzing peptide binding affinity to HLA class I a
 
 **Step 1:** Download HLA Haplotypes from the Allele Frequencies database (http://www.allelefrequencies.net/BrowseGenotype.aspx) into a single file. A file containing IDs (corresponding to the first column in the website’s table - table.txt) is required for download. Output file is data.csv
 
->./download.sh
+>./[![download.sh](https://img.shields.io/badge/download.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/download.sh)
 
 **Step 2:** Filter the raw peptides from input.csv. Output file is peptide.csv
 
->./processing_peptideA.sh
+>./[![processing_peptideA.sh](https://img.shields.io/badge/processing_peptideA.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/processing_peptideA.sh)
 
 **Step 3:** Filter the raw HLA haplotype data downloaded from the Allele Frequencies database.
 
->./processing_HLA.sh data.csv data2.csv
+>./[![processing_HLA.sh](https://img.shields.io/badge/processing_HLA.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/processing_HLA.sh) data.csv data2.csv
 
 **Step 4:** Select Global HLA Alleles (98% Coverage).
 
->python3 ./global_alleles.py data2.csv data3.csv
+>python3 ./[![global_alleles.py](https://img.shields.io/badge/global_alleles.py-red)](https://github.com/RiMaxim/Coronavirus/blob/main/iglobal_alleles.py) data2.csv data3.csv
 
 **Step 5:** Sort Peptides by Length. This example demonstrates the process of analysis run on peptides derived from the Omicron B.1.1.529 RBD antigen. Output files are 8.length, 8_9.length, 8_10.length, 9.length, 9_10.length and 10.length
 
->./separate_length.sh peptide.csv omicron
+>./[![separate_length.sh](https://img.shields.io/badge/separate_length.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/separate_length.sh) peptide.csv omicron
 
 **Step 6:** Organize the list of alleles to match the algorithm’s required format.
 >awk -F'*' '{print "HLA-"$1$2}' data3.csv >data4.csv
 
 **Step 7:** Predict HLA Binding (NetMHCpan-4.1). As an argument, you will obtain a numerical value representing the binding rank threshold. Peptide-HLA class I pairs with a binding rank above this threshold are removed. By default, the binding rank threshold for strongly binding peptides is 0.5. The program returns a list of HLA class I alleles and the corresponding peptides that exhibit strong binding, with a rank below 0.5. Output file is data5.csv 
 
->./run_netMHCpan.sh 0.5
+>./[![run_netMHCpan.sh](https://img.shields.io/badge/run_netMHCpan.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/run_netMHCpan.sh) 0.5
 
 **Step 8:** Calculate Population Immunity across different countries. The resulting table (data6.csv) with a list of 27 countries is sorted from the highest to the lowest index value (column 2). The number of countries may vary, depending on the file table.txt from the step 17. The resulting table (data7.csv) contains three columns: country, index value, and peptide.
 
->./population_immunity.sh
+>./[![population_immunity.sh](https://img.shields.io/badge/population_immunity.sh-red)](https://github.com/RiMaxim/Coronavirus/blob/main/population_immunity.sh)
 
 
 # 6. Check Protection Index Against RBD Omicron with Telegram Bot in a second
