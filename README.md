@@ -73,13 +73,13 @@ After installation, edit line 14 of the netMHCpan executable to point to your in
 
 # 4. Input Files
 
-**table.txt** – List of HLA genotype IDs (from Allele Frequencies Database).
+ [![table.txt](https://img.shields.io/badge/table.txt-green)](https://github.com/RiMaxim/Coronavirus/blob/main/table.txt) – List of HLA genotype IDs (from Allele Frequencies Database).
 
-**input.csv** – a list of peptides associated with Omicron B.1.1.529 and Wuhan-Hu-1, derived from the article: https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6. Each peptide is accompanied by an intensity value.
+ [![input.csv](https://img.shields.io/badge/input.csv-green)](https://github.com/RiMaxim/Coronavirus/blob/main/input.csv) – a list of peptides associated with Omicron B.1.1.529 and Wuhan-Hu-1, derived from the article: https://www.cell.com/iscience/fulltext/S2589-0042(25)00133-6. Each peptide is accompanied by an intensity value.
 
-**wt** – Wuhan-Hu-1 RBD sequence, including a C-terminal AviTag-His tag (ASENLYFQGGTGLNDIFEAQKIEWHETGHHHHHH) and an N-terminal non-RBD leader sequence (AP).
+ [![wt](https://img.shields.io/badge/wt-green)](https://github.com/RiMaxim/Coronavirus/blob/main/wt) – Wuhan-Hu-1 RBD sequence, including a C-terminal AviTag-His tag (ASENLYFQGGTGLNDIFEAQKIEWHETGHHHHHH) and an N-terminal non-RBD leader sequence (AP).
 
-**omicron** – Omicron B.1.1.529 RBD sequence (same tag format).
+ [![omicron](https://img.shields.io/badge/omicron-green)](https://github.com/RiMaxim/Coronavirus/blob/main/omicron) – Omicron B.1.1.529 RBD sequence (same tag format).
 
 
 
