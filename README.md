@@ -1,4 +1,4 @@
-# 1. Quick start by Linux (tested on Ubuntu 24.04.2 LTS)
+# Quick start by Linux (tested on Ubuntu 24.04.2 LTS)
 
 >git clone https://github.com/RiMaxim/Coronavirus.git
 >
