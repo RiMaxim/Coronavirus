@@ -1,3 +1,7 @@
+# 1. Quick start
+
+>git clone 
+>
 # 1. Dependencies
 
 >Linux (tested on Ubuntu 24.04.2 LTS)
